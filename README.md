@@ -22,7 +22,7 @@ must have!
 - Python 3.x+
 - Node Js
 <br>
-- clone the repository with ` git clone https://github.com/Navarrasa/quickpolls.git `;
+- clone the repository with <code>git clone https://github.com/Navarrasa/quickpolls.git</code>;
 
 
 <br>
