@@ -26,5 +26,6 @@ kwnowledge in the BackEnd way, as a FullStack developer.
 
 
 <hr>
+<br>
 I hope you liked the project! I had a lot of problems while developing, but them all helped me, and I'm grateful that it all worked!
 Thanks a lot for reading!
