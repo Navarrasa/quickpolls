@@ -14,8 +14,7 @@ kwnowledge in the BackEnd way, as a FullStack developer.
 
 ## Used technologies:
 
-
-
+[![My Skills](https://skillicons.dev/icons?i=django,react,tailwind)](https://skillicons.dev)
 
 ## How to Use:
 
