@@ -25,6 +25,7 @@ kwnowledge in the BackEnd way, as a FullStack developer.
 - clone the repository with `https://github.com/Navarrasa/quickpolls.git`;
 
 
+<br>
 <hr>
 <br>
 I hope you liked the project! I had a lot of problems while developing, but them all helped me, and I'm grateful that it all worked!
