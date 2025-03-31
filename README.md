@@ -18,7 +18,12 @@ kwnowledge in the BackEnd way, as a FullStack developer.
 
 ## How to Use:
 
-- clone the repository with ``
+!must have:!
+- Python 3.x+
+- Node Js
+
+- clone the repository with `https://github.com/Navarrasa/quickpolls.git`;
+
 
 
 I hope you liked the project! I had a lot of problems while developing, but them all helped me, and I'm grateful that it all worked!
