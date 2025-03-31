@@ -18,6 +18,7 @@ kwnowledge in the BackEnd way, as a FullStack developer.
 
 ## How to Use:
 
+- clone the repository with ``
 
 
 I hope you liked the project! I had a lot of problems while developing, but them all helped me, and I'm grateful that it all worked!
