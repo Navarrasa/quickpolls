@@ -1,2 +1,2 @@
-.env/
-node_modules/
+quickpolls_back/.env/
+quickpolls_front/node_modules/
