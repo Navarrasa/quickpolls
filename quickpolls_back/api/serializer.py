@@ -1,41 +1,36 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from rest_framework.validators import UniqueValidator
 
-class UserRegistrationSerializer(serializers.ModelSerializer):
-    # Define email field with uniqueness validator
-    email = serializers.EmailField(
-        validators=[UniqueValidator(queryset=get_user_model().objects.all())]
-    )
-    
+User = get_user_model()
+
+class CustomUserSerializer(serializers.ModelSerializer):
+
+    """
+    CustomUserSerializer -> Serializador para o modelo CustomUser.
+    Utilizado para criar novos usuários e validar os dados de entrada.
+    """
+
     class Meta:
-        model = get_user_model()  # Dynamically fetches the User model
-        fields = ['id', 'email', 'username', 'first_name', 'last_name', 'password']  # Fields to serialize
-        extra_kwargs = {
-            'password': {'write_only': True},  # Password is write-only for security
-            'first_name': {'required': False},  # First name is optional
-            'last_name': {'required': False},   # Last name is optional
-        }
+        # Define o modelo a ser utilizado e os campos que serão serializados.
+        # O campo 'password' é definido como write_only, o que significa que ele não será incluído na representação serializada do usuário.
+        model = User
+        fields = ['id', 'email', 'username', 'password']
+        extra_kwargs = {'password': {'write_only': True}}
 
+    # Verifica no processo de registro de um novo usuário se o campo username já existe no Banco de Dados
+    # Caso exista, retorna erro ao usuário de que o apelido já está em uso.
+    # Caso não exista, cria um novo usuário.
+    def validate_username(self, value):
+        if value:  # Verifica unicidade apenas se o username for fornecido
+            if User.objects.filter(username=value).exists():
+                raise serializers.ValidationError('Este apelido já está em uso.')
+        return value
+    
+    # Sobrescreve o método create para criar um novo usuário com a senha criptografada.
     def create(self, validated_data):
-        """
-        Creates a new user instance with the provided validated data.
-
-        Args:
-            validated_data (dict): Validated user data from the request.
-
-        Returns:
-            User: The newly created user instance.
-
-        Raises:
-            serializers.ValidationError: If user creation fails due to unexpected errors.
-        """
-        try:
-            # Create user with validated data using create_user for password hashing
-            user = get_user_model().objects.create_user(
-                **validated_data  # Unpack validated data directly
-            )
-            return user
-        except Exception as e:
-            # Handle any creation errors and return a meaningful message
-            raise serializers.ValidationError(f"Erro ao criar usuário: {str(e)}")
+        user = User.objects.create_user(
+            email=validated_data['email'],
+            username=validated_data.get('username'),  # Pode ser None
+            password=validated_data['password']
+        )
+        return user

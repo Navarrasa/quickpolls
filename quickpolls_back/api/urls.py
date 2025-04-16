@@ -1,12 +1,13 @@
 from django.urls import path
-from .views import register_user
+from .views import RegisterView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
 
 urlpatterns = [
-    path('register_user/', view=register_user, name='register_user'),
+    # EndPoints para respectivamente: registrar um novo usuário, obter um token JWT e atualizar o token JWT.
+    path('register/', RegisterView.as_view(), name='register_user'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     

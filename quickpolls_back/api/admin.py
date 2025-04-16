@@ -1,22 +1,16 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser
+from .models import CustomUser, Poll, Option, Vote
 
-class CustomUserAdmin(UserAdmin):
-    list_display = ['email', 'first_name', 'last_name', 'is_staff']  # Enhanced display
-    ordering = ['email']  # Fix for the error
-    list_filter = ['is_staff', 'is_superuser']  # Add filters
-    fieldsets = (
-        (None, {'fields': ('email', 'password')}),
-        ('Personal Info', {'fields': ('first_name', 'last_name')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
-    )
-    add_fieldsets = (
-        (None, {
-            'classes': ('wide',),
-            'fields': ('email', 'first_name', 'last_name', 'password1', 'password2'),
-        }),
-    )
-    search_fields = ['email', 'first_name', 'last_name']  # Enable search
+"""
+Admin configuration for the QuickPolls application.
+This file registers the models with the Django admin site, allowing them to be managed through the admin interface.
+"""
 
-admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(CustomUser)
+admin.site.register(Poll)
+admin.site.register(Option)
+admin.site.register(Vote)
+
+admin.site.site_header = "QuickPolls Admin"
+admin.site.site_title = "QuickPolls Admin Portal"
+admin.site.index_title = "Welcome to QuickPolls Admin Portal"

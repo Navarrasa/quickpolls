@@ -18,6 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    
+    # The URL patterns for the Django admin site and the API.
+    # The 'admin/' URL pattern is for the Django admin interface, which allows you to manage your application.
+    # The 'api/' URL pattern is for the API endpoints defined in the 'api.urls' module.
+    
     path('admin/', admin.site.urls),
     path('api/', include('api.urls'))
 ]
