@@ -28,15 +28,15 @@ Backend local server
   <br>
 - open directory with command prompt;
   <br>
-- change directory with `cd quickpolls_back`;
+- change directory with <code>cd quickpolls_back</code>;
   <br>
-- create a Virtual environment with `python -m venv .env`;
+- create a Virtual environment with <code>python -m venv .env</code>;
   <br>
-- activate the .env with `.env/Scripts/activate`;
+- activate the .env with <code>.env/Scripts/activate</code>;
   <br>
-- install the dependencies with `pip install -r requirements.txt`
+- install the dependencies with <code>pip install -r requirements.txt</code>;
   <br>
-- run the local backend server with `python manage.py runserver`
+- run the local backend server with <code>python manage.py runserver</code>;
   <br>
 - and thats all! Our backend server is nwo running. Now we may go to the frontend website.
 <br>
@@ -46,13 +46,13 @@ Frontend website
   <br>
 - Open the project in another command prompt window;
   <br>
-- change directory with `cd quickpolls_front`;
+- change directory with <code>cd quickpolls_front</code>;
   <br>
-- type in the prompt `npm i` (must have node.js installed!);
+- type in the prompt <code>npm install</code> (must have node.js installed!);
   <br>
 - wait for the dependencies to download;
   <br>
-- start the new website with local dev `npm run dev`;
+- start the new website with local dev <code>npm run dev</code>;
   <br>
 - open the fresh local frontend website with the localhost URL that command prompt will show you.
 <hr>
