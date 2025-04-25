@@ -22,11 +22,26 @@ must have!
 - Python 3.x+
 - Node Js
 <br>
+Backend local server
 - clone the repository with <code>git clone https://github.com/Navarrasa/quickpolls.git</code>;
-
-
+- open directory with command prompt;
+- change directory with `cd quickpolls_back`;
+- create a Virtual environment with `python -m venv .env`;
+- activate the .env with `.env/Scripts/activate`;
+- install the dependencies with `pip install -r requirements.txt`
+- run the local backend server with `python manage.py runserver`
+- and thats all! Our backend server is nwo running. Now we may go to the frontend website.
 <br>
+Frontend website
+- do not close your backend prompt, or it will stop functioning and you'll have to do it all again;
+- Open the project in another command prompt window;
+- change directory with `cd quickpolls_front`;
+- type in the prompt `npm i` (must have node.js installed!);
+- wait for the dependencies to download;
+- start the new website with local dev `npm run dev`;
+- open the fresh local frontend website with the localhost URL that command prompt will show you.
 <hr>
+
 <br>
 I hope you liked the project! I had a lot of problems while developing, but them all helped me, and I'm grateful that it all worked!
 Thanks a lot for reading!
