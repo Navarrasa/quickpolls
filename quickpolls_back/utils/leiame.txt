@@ -1,0 +1,6 @@
+palavras_proibidas.txt é um arquivo para filtrar todos os tipos de palavras que serão expressamente proibidas dentro do website.
+
+Serão filtradas e banidas assim que validadas.
+
+
+https://grok.com/share/bGVnYWN5_86854eb5-27a3-461f-86d2-ca7b02516ea3
